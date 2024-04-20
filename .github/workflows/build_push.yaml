@@ -44,6 +44,6 @@ jobs:
             ATLANTIS_VERSION=${{ env.ATLANTIS_VERSION }}
             TERRAGRUNT_VERSION=${{ env.TERRAGRUNT_VERSION }}
             SOPS_VERSION=${{ env.SOPS_VERSION }}
-          push: ${{ github.event_name != 'pull_request' }}
+          push: ${{ github.event_name == 'push' && contains(github.ref, 'refs/tags/') }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
