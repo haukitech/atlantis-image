@@ -8,9 +8,9 @@ on:
     branches:
       - master
 env:
-  ATLANTIS_VERSION: v0.27.2
-  TERRAGRUNT_VERSION: v0.57.5
-  SOPS_VERSION: v3.8.1
+  ATLANTIS_VERSION: v0.29.0
+  TERRAGRUNT_VERSION: v0.67.11
+  SOPS_VERSION: v3.9.0
   IMAGE: ghcr.io/${{github.repository}}
 jobs:
   build_push_image:
