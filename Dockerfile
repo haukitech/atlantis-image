@@ -12,6 +12,6 @@ ADD --chown=root:root --chmod=0755 https://github.com/gruntwork-io/terragrunt/re
 ADD --chown=root:root --chmod=0755 https://github.com/getsops/sops/releases/download/${SOPS_VERSION}/sops-${SOPS_VERSION}.linux.amd64 /usr/local/bin/sops
 
 COPY --chmod=0755 ./verify_extra_tools_checksum.sh /usr/local/bin/verify_extra_tools_checksum.sh
-RUN verify_extra_tools_checksum.sh
+RUN /usr/local/bin/verify_extra_tools_checksum.sh
 
 USER atlantis
