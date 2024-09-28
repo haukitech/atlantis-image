@@ -7,6 +7,6 @@ with necessary tools, as the official documentation suggests.
 
 | Tool       | Version  |
 |------------|----------|
-| terragrunt | v1.8.2   |
+| opentofu   | v1.8.2   |
 | terragrunt | v0.67.11 |
 | sops       | v3.9.0   |
