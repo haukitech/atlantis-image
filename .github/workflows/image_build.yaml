@@ -59,7 +59,8 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
       - uses: actions/attest-build-provenance@v1
         id: attest
+        if: ${{ github.event_name == 'push' && contains(github.ref, 'refs/tags/') }}
         with:
           subject-name: ${{ env.IMAGE }}
           subject-digest: ${{ steps.build.outputs.digest }}
-          push-to-registry: ${{ github.event_name == 'push' && contains(github.ref, 'refs/tags/') }}
+          push-to-registry: true
