@@ -24,7 +24,7 @@ on:
 env:
   IMAGE: ghcr.io/${{github.repository}}
 jobs:
-  build_push_image:
+  image_build:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -49,8 +49,15 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ github.token }}
       - uses: docker/build-push-action@v5
+        id: build
         with:
           context: .
           push: ${{ github.event_name == 'push' && contains(github.ref, 'refs/tags/') }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+      - uses: actions/attest-build-provenance@v1
+        id: attest
+        with:
+          subject-name: ${{ env.IMAGE }}
+          subject-digest: ${{ steps.build.outputs.digest }}
+          push-to-registry: ${{ github.event_name == 'push' && contains(github.ref, 'refs/tags/') }}
