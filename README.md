@@ -19,6 +19,6 @@ with necessary tools, as the official documentation suggests.
 
 ## Versioning
 
-We use Semver 2.0.0 to tag this image. The major and the minor versions
-always match the major and minor versions of the upstream Atlantis image
-tag.
+We use Semver 2.0.0 to tag this image. The major, the minor and the patch versions
+always match the semantic version of the upstream Atlantis image. The build number
+is used to track the version of Hauki extensions.
