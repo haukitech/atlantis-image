@@ -34,6 +34,8 @@ RUN ./verify_extra_tools_checksum.sh
 
 FROM ghcr.io/runatlantis/atlantis:${ATLANTIS_VERSION}
 
+USER root
+
 RUN apk add --no-cache aws-cli
 COPY --from=build --chown=root:root --chmod=0755 /extra_tools/bin/ /usr/local/bin/
 
