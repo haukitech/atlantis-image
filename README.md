@@ -10,10 +10,11 @@ with necessary tools, as the official documentation suggests.
 
 ## Additional tools installed to the image
 
-| Tool       | Version  |
-|------------|----------|
-| terragrunt | v0.67.14 |
-| sops       | v3.9.0   |
+| Tool       | Version     |
+|------------|-------------|
+| aws-cli    | 2.15.57-r0  |
+| sops       | v3.9.0      |
+| terragrunt | v0.67.14    |
 
 
 ## Versioning
